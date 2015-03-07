@@ -22,6 +22,7 @@ png(filename='plot2.png')
 plot(data$Timestamp, 
      data$GAP, 
      ylab='Global Active Power (kilowatts)', 
+     xlab='',
      type='l')
 
 dev.off()

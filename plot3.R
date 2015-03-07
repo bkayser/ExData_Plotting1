@@ -17,3 +17,29 @@ data$Timestamp = strptime(paste(data$Date, data$Time), '%d/%m/%Y %H:%M:%S')
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # Create the plot on a PNG device
+png(filename='plot3.png')
+
+plot(data$Timestamp, 
+     data$Sub_metering_1,
+     ylab='Energy sub metering', 
+     xlab='',
+     type='n')
+
+lines(data$Timestamp,
+      data$Sub_metering_1,
+      col='black')
+
+lines(data$Timestamp,
+      data$Sub_metering_2,
+      col='red')
+
+lines(data$Timestamp,
+      data$Sub_metering_3,
+      col='blue')
+
+legend('topright',
+       c(names(data)[7:9]),
+       col=c('black','red','blue'),
+       lwd=1)
+
+dev.off()
